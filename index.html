@@ -739,6 +739,242 @@
             .cta-features { flex-direction: column; align-items: center; gap: 12px; }
         }
 
+        /* ============ BLOG ============ */
+        #blog {
+            background: var(--mid);
+            padding: 80px 40px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .blog-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto 48px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .blog-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .blog-new-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--green);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        .blog-new-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            display: block;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.75; }
+        }
+
+        .blog-header h2 {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .blog-header-date {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .blog-article {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .blog-article-hero {
+            background: linear-gradient(135deg, #0d2a1a 0%, #0a1f2e 100%);
+            padding: 48px 52px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-article-hero::after {
+            content: 'OCR';
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-size: 160px;
+            font-weight: 900;
+            color: rgba(22,163,74,0.06);
+            line-height: 1;
+            letter-spacing: -4px;
+            pointer-events: none;
+        }
+
+        .blog-article-tag {
+            display: inline-block;
+            background: rgba(22,163,74,0.15);
+            border: 1px solid rgba(22,163,74,0.3);
+            color: var(--green-light);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 3px;
+            margin-bottom: 16px;
+        }
+
+        .blog-article-title {
+            font-size: clamp(22px, 3vw, 34px);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            max-width: 700px;
+            margin-bottom: 16px;
+        }
+
+        .blog-article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 12px;
+            color: #64748b;
+            flex-wrap: wrap;
+        }
+
+        .blog-article-meta span { display: flex; align-items: center; gap: 5px; }
+
+        .blog-body {
+            padding: 48px 52px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .blog-section {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 28px;
+            transition: border-color 0.2s;
+        }
+
+        .blog-section:hover { border-color: rgba(22,163,74,0.25); }
+
+        .blog-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .blog-section p {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .blog-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .blog-bullets li {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .blog-bullets li::before {
+            content: '→';
+            color: var(--green);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .blog-section-full {
+            grid-column: 1 / -1;
+        }
+
+        .blog-cta-bar {
+            background: linear-gradient(90deg, rgba(22,163,74,0.1), rgba(22,163,74,0.05));
+            border-top: 1px solid rgba(22,163,74,0.15);
+            padding: 28px 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .blog-cta-bar p {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .blog-cta-bar strong { color: var(--white); }
+
+        .btn-green-outline {
+            display: inline-block;
+            border: 1px solid var(--green);
+            color: var(--green-light);
+            padding: 10px 24px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-green-outline:hover { background: var(--green); color: #fff; }
+
+        @media (max-width: 768px) {
+            #blog { padding: 60px 20px; }
+            .blog-article-hero,
+            .blog-body,
+            .blog-cta-bar { padding: 28px 24px; }
+            .blog-body { grid-template-columns: 1fr; }
+            .blog-section-full { grid-column: 1; }
+            .blog-header { flex-direction: column; align-items: flex-start; }
+        }
+
         /* ============ FOOTER ============ */
         footer {
             background: var(--dark);
@@ -1045,6 +1281,99 @@
             <span class="cta-feature">Simple API &amp; web app integration</span>
         </div>
         <a href="mailto:info@moneythumb.com?subject=Demo Request" class="btn-green" style="font-size: 16px; padding: 16px 40px;">Request a Demo</a>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+        <div class="blog-header">
+            <div class="blog-header-left">
+                <span class="blog-new-badge">New Today</span>
+                <h2>Latest Insight from MoneyThumb</h2>
+            </div>
+            <span class="blog-header-date">April 14, 2026 · By Denise Grier</span>
+        </div>
+
+        <div class="blog-article">
+            <div class="blog-article-hero">
+                <div class="blog-article-tag">Document Extraction</div>
+                <h2 class="blog-article-title">Professional OCR Technology For Financial Document Extraction</h2>
+                <div class="blog-article-meta">
+                    <span>📅 April 14, 2026</span>
+                    <span>✍️ Denise Grier</span>
+                    <span>⏱ 6 min read</span>
+                </div>
+            </div>
+
+            <div class="blog-body">
+                <!-- Section 1 -->
+                <div class="blog-section">
+                    <h3>Detect Abnormal Deposit Patterns Automatically</h3>
+                    <p>Modern OCR tools convert raw statements into structured, analyzable data — making it far easier to spot patterns that don't align with a business's typical cash flow.</p>
+                    <ul class="blog-bullets">
+                        <li>Sudden spikes in deposits without historical consistency</li>
+                        <li>Round-number transactions that repeat frequently (often synthetic)</li>
+                        <li>Irregular deposit timing — clustered end-of-month activity</li>
+                        <li>Mismatch between deposits and business type</li>
+                        <li>Multiple accounts feeding into one statement</li>
+                    </ul>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="blog-section">
+                    <h3>How Traditional Lenders Can Match Fintech Speed</h3>
+                    <p>Traditional lenders lose deals not because of rates — but because of speed. The biggest delay usually sits in document review, not decision-making.</p>
+                    <ul class="blog-bullets">
+                        <li>Automate document ingestion instead of manual uploads</li>
+                        <li>Use OCR-based extraction to convert statements instantly</li>
+                        <li>Standardize workflows so every application follows the same path</li>
+                        <li>Enable parallel processing instead of step-by-step approvals</li>
+                    </ul>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="blog-section">
+                    <h3>Reducing Fraud in High-Volume SMB Loan Processing</h3>
+                    <p>Fraud today is more subtle — small inconsistencies repeated across documents. Manual review can't keep up at scale.</p>
+                    <ul class="blog-bullets">
+                        <li>Cross-verify transaction consistency across multiple statements</li>
+                        <li>Check metadata and formatting anomalies in PDFs</li>
+                        <li>Identify duplicate or reused transactions across applications</li>
+                        <li>Flag mismatched fonts, spacing, or layout structures</li>
+                    </ul>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="blog-section">
+                    <h3>Can OCR Detect AI-Generated Financial Documents?</h3>
+                    <p>AI tools can now generate highly realistic financial documents. Modern OCR systems address this by analyzing structure, not just text.</p>
+                    <ul class="blog-bullets">
+                        <li>Identifies inconsistencies in document layout</li>
+                        <li>Checks spacing, alignment, and formatting patterns</li>
+                        <li>Compares extracted data with known bank formats</li>
+                        <li>Validates embedded layers inside PDF files</li>
+                    </ul>
+                </div>
+
+                <!-- Section 5 - Full Width -->
+                <div class="blog-section blog-section-full">
+                    <h3>OCR vs Manual Review: What Actually Changes in Loan Processing?</h3>
+                    <p>Once OCR is fully implemented, the biggest change is consistency — every application gets the same level of analysis, which is almost impossible to maintain manually.</p>
+                    <ul class="blog-bullets" style="display:grid; grid-template-columns:1fr 1fr; gap:8px 32px;">
+                        <li><strong style="color:var(--white)">Speed:</strong> OCR processes documents in minutes vs. hours</li>
+                        <li><strong style="color:var(--white)">Accuracy:</strong> Automated systems eliminate human entry error</li>
+                        <li><strong style="color:var(--white)">Fraud detection:</strong> Patterns humans often miss, caught automatically</li>
+                        <li><strong style="color:var(--white)">Scalability:</strong> Handle hundreds of applications without added staff</li>
+                        <li><strong style="color:var(--white)">Consistency:</strong> Every file processed with identical logic and rules</li>
+                        <li><strong style="color:var(--white)">Audit trails:</strong> Improved compliance and reporting at every step</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="blog-cta-bar">
+                <p><strong>MoneyThumb combines extraction with validation</strong> — not just reading documents, but evaluating authenticity at multiple levels to stay ahead of fraud.</p>
+                <a href="mailto:info@moneythumb.com?subject=OCR Demo Request" class="btn-green-outline">See It in Action →</a>
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
