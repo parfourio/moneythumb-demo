@@ -28,7 +28,7 @@
             box-sizing: border-box;
         }
 
-        html { scroll-behavior: smooth; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
 
         :root {
             --green: #16a34a;
@@ -1077,6 +1077,8 @@
 
         .btn-green-outline:hover { background: var(--green); color: #fff; }
 
+        .blog-bullets-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; }
+
         @media (max-width: 768px) {
             #blog { padding: 60px 16px; }
             .blog-article-hero,
@@ -1084,6 +1086,7 @@
             .blog-cta-bar { padding: 24px 16px; }
             .blog-body { grid-template-columns: 1fr; width: 100%; }
             .blog-section { width: 100%; min-width: 0; }
+            .blog-bullets-2col { grid-template-columns: 1fr; }
             .blog-section-full { grid-column: 1; }
             .blog-header { flex-direction: column; align-items: flex-start; }
         }
@@ -1500,7 +1503,7 @@
                 <div class="blog-section blog-section-full">
                     <h3>OCR vs Manual Review: What Actually Changes in Loan Processing?</h3>
                     <p>Once OCR is fully implemented, the biggest change is consistency — every application gets the same level of analysis, which is almost impossible to maintain manually.</p>
-                    <ul class="blog-bullets" style="display:grid; grid-template-columns:1fr 1fr; gap:8px 32px;">
+                    <ul class="blog-bullets blog-bullets-2col">
                         <li><strong style="color:var(--white)">Speed:</strong> OCR processes documents in minutes vs. hours</li>
                         <li><strong style="color:var(--white)">Accuracy:</strong> Automated systems eliminate human entry error</li>
                         <li><strong style="color:var(--white)">Fraud detection:</strong> Patterns humans often miss, caught automatically</li>
@@ -1566,11 +1569,24 @@
             navLinks.classList.toggle('open');
         });
 
-        // Close menu when a link is tapped
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+        // Custom scroll: account for nav height so content lands right below nav
+        const NAV_H    = 64;
+        const PAD_SKIP = 80;
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const id = this.getAttribute('href').slice(1);
                 hamburger.classList.remove('open');
                 navLinks.classList.remove('open');
+                if (!id) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                const el = document.getElementById(id);
+                if (!el) return;
+                e.preventDefault();
+                const top = el.getBoundingClientRect().top + window.scrollY - NAV_H + PAD_SKIP;
+                window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
             });
         });
     </script>
