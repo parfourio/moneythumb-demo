@@ -19,6 +19,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoneyThumb — Bank Statement Analysis for Lenders</title>
+    <script>
+      // Desktop users → original site. Mobile users → stay on this demo.
+      if (!/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) {
+        window.location.replace('https://www.moneythumb.com');
+      }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316a34a'/%3E%3Cellipse cx='16' cy='16' rx='1.6' ry='2.4' fill='white'/%3E%3Cellipse cx='16' cy='16' rx='3.2' ry='5.2' fill='none' stroke='white' stroke-width='1.6' pathLength='100' stroke-dasharray='44 6 42 8' stroke-dashoffset='0'/%3E%3Cellipse cx='16' cy='16' rx='5.4' ry='8.2' fill='none' stroke='white' stroke-width='1.4' pathLength='100' stroke-dasharray='47 4 43 6' stroke-dashoffset='31'/%3E%3Cellipse cx='16' cy='16' rx='7.6' ry='11' fill='none' stroke='white' stroke-width='1.3' pathLength='100' stroke-dasharray='43 7 46 4' stroke-dashoffset='57'/%3E%3Cellipse cx='16' cy='16' rx='9.4' ry='13.4' fill='none' stroke='white' stroke-width='1.1' pathLength='100' stroke-dasharray='48 3 44 5' stroke-dashoffset='32'/%3E%3C/svg%3E">
     <style>
